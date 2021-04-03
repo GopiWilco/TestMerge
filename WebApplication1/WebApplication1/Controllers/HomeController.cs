@@ -22,6 +22,10 @@ namespace WebApplication1.Controllers
 
             return View();
         }
+        
+        public Brnahc()
+        {
+        }
 
         public ActionResult About()
         {
