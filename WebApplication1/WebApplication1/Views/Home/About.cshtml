@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Embed</title>
+    <!-- You can download the latest QuickSight embedding SDK version from https://www.npmjs.com/package/amazon-quicksight-embedding-sdk -->
+    <!-- Or you can do "npm install amazon-quicksight-embedding-sdk", if you use npm for javascript dependencies -->
+    <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.13/dist/quicksight-embedding-js-sdk.min.js"></script>
+    <script type="text/javascript">
+        var dashboard;
+
+        function embedDashboard() {
+            var containerDiv = document.getElementById("embeddingContainer");
+            var options = {
+                // replace this dummy url with the one generated via embedding API
+                url: "https://us-east-2.quicksight.aws.amazon.com/embed/9c59d8c16a8c4e7aa455dc06c1c6c527/dashboards/7affa0f2-e430-4ce0-9bc9-9007c97fcb71?isauthcode=true&identityprovider=quicksight&code=AYABeNVrV11EPCCLvIY-ecNi1VMAAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTI6MjU5MzgxNDUwNDA2OmtleS8xZGQ4NmNiNy01MmE3LTQxMTItYTEyOC0zNTYzMzU0ODViZTkAuAECAQB4C-OrwATr2SRjgrM6Dg9q_bLwhn-fdu_FFll_muf6DA0BRHBMGKADJ3QKkT4IDNUZGQAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDDBmH871_h0pzTJRFgIBEIA7-t529riUUBaFDlrAjpS9OrYdsahIokccytRHD3pH7bIG5JJTdYXkruq4bEHd2Kt6y5S23kR1eXuZln8CAAAAAAwAABAAAAAAAAAAAAAAAAAAoWl0-Exn3nxH6Iv0oy5T1v____8AAAABAAAAAAAAAAAAAAABAAAAniqLOpQcrEATbEUsKGxh3JKQEFt6yDCjN1jRmT3CKHHmiDLem98H6Fjb9szOa7mJiLbVEyymBQOcbS-Pm6mtm_Jmvb3MGYDFeB_kfPeYEKl4zkiT67BQMH1tTnBYMIrnp-b8iDME2CWn9L2xhngnslp_zA4BrvhDbXWK9WvSv5FU5nqNkoiB6W_6uTwvOwJ7wYxMnvXrvJl76GuOOxW8ndik8UCivUq62L4BMe8tYw%3D%3D&resetDisabled=true",
+                container: containerDiv,
+                scrolling: "no",
+                height: "700px",
+                width: "1000px",
+                footerPaddingEnabled: true
+            };
+            dashboard = QuickSightEmbedding.embedDashboard(options);
+        }
+    </script>
+</head>
+
+<body onload="embedDashboard()">
+    <div id="embeddingContainer"></div>
+</body>
+
+</html>
